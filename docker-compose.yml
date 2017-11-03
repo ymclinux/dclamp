@@ -1,0 +1,13 @@
+web:
+  build: ./apache
+  ports:
+    - "8000:80"
+  links:
+    - db
+db:
+  image: "mysql:8"
+  volumes:
+    - ./mysql:/etc/mysql/conf.d
+  environment:
+    MYSQL_ROOT_PASSWORD: harharbhole
+    MYSQL_DATABASE: aditya
